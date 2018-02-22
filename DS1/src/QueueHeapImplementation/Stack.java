@@ -2,14 +2,12 @@ package QueueHeapImplementation;
 
 public class Stack<T> implements Queue<T> {
 
-	@SuppressWarnings("rawtypes")
-	Nodes list;
+	Nodes<T> list;
 	/*
 	 * FILOLOLOL
 	 */
-	@SuppressWarnings("rawtypes")
 	public Stack() {
-		list = new Nodes();
+		list = new Nodes<T>();
 	}
 
 	
@@ -22,7 +20,6 @@ public class Stack<T> implements Queue<T> {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public T pop() {
 		T temp = (T) this.list.value;
@@ -35,7 +32,6 @@ public class Stack<T> implements Queue<T> {
 	}
 
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void push(T val) {
 		if(this.list.value == null) {
@@ -50,7 +46,6 @@ public class Stack<T> implements Queue<T> {
 		this.list.next = secnd;
 		
 	}
-	@SuppressWarnings("rawtypes")
 	@Override
 	public String toString() {
 		System.out.println("List Contents:");
@@ -80,17 +75,13 @@ public class Stack<T> implements Queue<T> {
 
 
 	}
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		@SuppressWarnings("rawtypes")
-		Stack stack = new Stack();
+		Stack<Integer> stack = new Stack<Integer>();
 		Integer[] valuesToBePushed = {1,2,3,4,5};
-		String[] stringsToBePushed = {"one","two","three","four","five"};
 
 		for(int i = 0; i < valuesToBePushed.length; i++) {
-			stack.push(valuesToBePushed[i]);
-			stack.push(stringsToBePushed[i]);	
+			stack.push(valuesToBePushed[i]);	
 		}
 
 		stack.toString();
